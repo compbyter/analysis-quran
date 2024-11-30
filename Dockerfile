@@ -22,20 +22,14 @@ RUN neo4j-admin database import full neo4j \
  
 
 FROM neo4j:5.25.1
- 
 
 ENV NEO4J_AUTH=neo4j/testtest
- 
 
 COPY --from=neo4j-import /data /data
 
+COPY neo4j.conf /var/lib/neo4j/conf/neo4j.conf
 
-
-
-
-
-
-EXPOSE 7474 7687
+EXPOSE 7474 7687 7473
 
 CMD ["neo4j"]
 
