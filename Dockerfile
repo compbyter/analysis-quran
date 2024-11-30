@@ -33,6 +33,9 @@ RUN mkdir -p /var/lib/neo4j/certificates/https
 RUN mkdir -p /var/lib/neo4j/certificates/https/trusted
 RUN mkdir -p /var/lib/neo4j/certificates/https/revoked
 
+COPY server-logs.xml /var/lib/neo4j/conf/server-logs.xml
+COPY user-logs.xml /var/lib/neo4j/conf/server-logs.xml
+
 COPY private.key /var/lib/neo4j/certificates/https/private.key
 COPY public.crt /var/lib/neo4j/certificates/https/public.crt
 COPY public.crt /var/lib/neo4j/certificates/https/trusted/public.crt
